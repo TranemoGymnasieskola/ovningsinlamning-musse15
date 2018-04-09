@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SnakeGame</title>
+</head>
+<body>
+	<canvas id='canvas' width='350' height='350'>
+		Press start and eat the food!
+		<button id='btn'>START</button>
+		<script>
+			var mycanvas = document.getElementById('mycanvas');
+			var ctx = mycanvas.getContext('2d');
+			var snakeSize = 10;
+			var w = 350;
+			var h = 350;
+			var score = 0;
+			var snake;
+			var snakeSize = 10;
+			var food;
+			var drawModule = (function () {
+				var  bodySnake = function(x, y) {
+					ctx.fillStyle = 'green';
+					ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
+					ctx.strokeStyle = 'darkgreen';
+					ctx.strokeStyle(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
+			}
+
+			var food = function(x, y) {
+				ctx.fillStyle = 'yellow';
+				ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
+				ctx.fillStyle = 'red';
+				ctx.fillRect(x*snakeSize+1, y*snakeSize+1, snakeSize-2, snakeSize-2);
+			}
+
+			var scoreText = function() {
+				var score_text = 'Score: ' + score;
+				ctx.fillStyle = 'blue';
+				ctx.fillText(score_text, 145, h-5);
+			}
+		</script>
+</body>
+</html>
